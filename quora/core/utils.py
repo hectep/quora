@@ -1,0 +1,14 @@
+import random
+import string
+
+
+ALPHANUMERIC_CHARS = string.ascii_lowercase = string.digits
+
+STRING_LENGTH = 6
+
+
+def generate_random_string(chars=ALPHANUMERIC_CHARS, length=STRING_LENGTH):
+    """
+    Generates random suffix to quiestion's slug
+    """
+    return ''.join(random.choice(chars) for _ in range(length))

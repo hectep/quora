@@ -1,0 +1,11 @@
+build:
+  config:
+    SECRET_KEY:
+    DEBUG:
+  docker:
+    web: Dockerfile
+
+run:
+  web: cd quora && python manage.py collectstatic --noinput && gunicorn quora.wsgi:application --bind 0.0.0.0:$PORT
+release:
+  image: web
